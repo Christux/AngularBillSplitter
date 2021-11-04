@@ -3,7 +3,6 @@ import { Person } from './core/person';
 import { IndexIterator } from './core/indexIterator';
 import { Calculator } from './core/calculator';
 import { Subject } from 'rxjs';
-import { ClippyService } from 'js-clippy';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +13,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   persons: Person[] = PersonList; //[];
   private indexIterator = new IndexIterator();
-  private calculator =  new Calculator(this.persons);
+  calculator =  new Calculator(this.persons);
   computationResult: string[] = [];
   partValue$ = new Subject<number>();
 
-  constructor(private clippy: ClippyService) {
-    this.clippy.create("Clippy");
+  constructor() {
   }
 
   ngOnInit() {

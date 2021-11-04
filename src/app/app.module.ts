@@ -6,7 +6,6 @@ import { MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, M
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JsClippyModule } from 'js-clippy';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { JsClippyModule } from 'js-clippy';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule,
-    JsClippyModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
