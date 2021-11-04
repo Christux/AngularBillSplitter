@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Person } from './core/person';
 import { IndexIterator } from './core/indexIterator';
 import { Calculator } from './core/calculator';
