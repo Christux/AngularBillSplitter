@@ -1,4 +1,35 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<div *ngFor="let person of persons">
+	<app-person [person]="person"
+				[partValue$]="partValue$"
+				(changePerson)="change($event)"
+				(deletePerson)="delete($event)">
+	</app-person>
+</div>
+
+
+<button mat-raised-button 
+		color="primary"
+		(click)="addPerson()"> 
+	<mat-icon>add_circle</mat-icon> Add a person
+</button>
+
+<div>
+	<p>Number of persons: {{calculator.getNumberOfPersons()}}</p>
+	<p>Amount of parts: {{calculator.getNumberOfParts()}}</p>
+	<p>Total cost: {{calculator.getTotalCost()}}</p>
+	<p>Cost per part: {{calculator.getPartValue().toFixed(2)}}</p>
+</div>
+
+<div>
+	<p>Number of transaction: {{computationResult.length}}</p>
+	<ul>
+		<li *ngFor="let result of computationResult">{{result}}</li>
+	</ul>
+</div>
+
+<button mat-raised-button 
+		color="primary"
+		(click)="optimize()"> 
+	<mat-icon>filter_list</mat-icon> Optimize result
+</button>
