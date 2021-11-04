@@ -25,9 +25,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.addPerson();
     }
     this.update();
-
-    //this.clippy.show(true);
-    //this.clippy.speak("hello world",true);
   }
 
   ngAfterViewInit() {
