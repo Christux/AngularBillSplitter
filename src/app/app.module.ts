@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatIconModule, MatTooltipModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { AppComponent } from './app.component';
 import { PersonComponent } from './person.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JsClippyModule } from 'js-clippy';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -23,8 +26,7 @@ import { JsClippyModule } from 'js-clippy';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule,
-    JsClippyModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,35 +1,28 @@
-import { Component, OnInit, AfterViewInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Person } from './core/person';
 import { IndexIterator } from './core/indexIterator';
 import { Calculator } from './core/calculator';
 import { Subject } from 'rxjs';
-import { ClippyService } from 'js-clippy';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-
   persons: Person[] = PersonList; //[];
   private indexIterator = new IndexIterator();
-  private calculator =  new Calculator(this.persons);
+  calculator = new Calculator(this.persons);
   computationResult: string[] = [];
   partValue$ = new Subject<number>();
 
-  constructor(private clippy: ClippyService) {
-    this.clippy.create("Clippy");
-  }
+  constructor() {}
 
   ngOnInit() {
     if (this.persons.length === 0) {
       this.addPerson();
     }
     this.update();
-
-    //this.clippy.show(true);
-    //this.clippy.speak("hello world",true);
   }
 
   ngAfterViewInit() {
@@ -46,13 +39,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   change(person: Person) {
-    this.persons.filter(p => p.id === person.id)[0] = person;
+    this.persons.filter((p) => p.id === person.id)[0] = person;
     this.update();
   }
 
   delete(person: Person) {
-
-    this.persons.forEach( (p, index) => {
+    this.persons.forEach((p, index) => {
       if (p.id === person.id) {
         this.persons.splice(index, 1);
       }
@@ -70,7 +62,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     const result = this.calculator.optimize();
     this.computationResult = this.calculator.repport(result);
   }
-
 }
 
 const PersonList = [
@@ -82,5 +73,5 @@ const PersonList = [
   new Person(55, 'Fran', 200, 1),
   new Person(56, 'Lee', 20, 1),
   new Person(57, 'Oliver&Jack', 120, 2),
-  new Person(58, 'Rose', 30, 1)
+  new Person(58, 'Rose', 30, 1),
 ];
